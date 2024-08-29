@@ -2,9 +2,10 @@ from time import sleep, time
 import keyboard
 import pyautogui
 
-game_name = "zelly"
+game_name = "zelly-"
 game_password = "123"
-game_number = 0
+game_number = 1
+numOfAccounts = 7       #3,5,7
 
 def debug_mouse_position():
     while(True):
@@ -12,9 +13,11 @@ def debug_mouse_position():
         print(f"Mouse position: (X: {x}, Y: {y})")
         sleep(0.2)
 
+#join game
 def on_press_f3():
     global game_number
     print("JOINING GAME:" , game_name,game_number)
+    pyautogui.click(2200,20)
     pyautogui.click(2900,90) #Join Game button
     sleep(0.2)
     pyautogui.click(2800,136) #Game Name Box
@@ -34,6 +37,7 @@ def on_press_f3():
     pyautogui.press('enter')    #enters game
 
     #Account 2:
+    pyautogui.click(3500,925)
     pyautogui.click(3550,384) #Join Game button
     sleep(0.2)
     pyautogui.click(3450,434) #Game Name Box
@@ -51,10 +55,92 @@ def on_press_f3():
     pyautogui.write(game_password)
     pyautogui.press('enter')    #enters game
 
+    if(numOfAccounts >= 5):
+            #Account 3:
+        pyautogui.click(3500,20)
+        pyautogui.click(3553,90) #Join Game button
+        sleep(0.2)
+        pyautogui.click(3450,136) #Game Name Box
+        sleep(0.01)
+        #Delte all previous gamename text
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyautogui.write(game_name)  #writes gamename
+        pyautogui.write(game_number_str)
+        #game password:
+        pyautogui.click(3650,136) #game pass box
+        sleep(0.01)
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyautogui.write(game_password)
+        pyautogui.press('enter')    #enters game
+
+        #Account 4:
+        pyautogui.click(2000,1020)
+        pyautogui.click(2880,390) #Join Game button
+        sleep(0.2)
+        pyautogui.click(2880,434) #Game Name Box
+        sleep(0.01)
+        #Delte all previous gamename text
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyautogui.write(game_name)  #writes gamename
+        pyautogui.write(game_number_str)
+        #game password:
+        pyautogui.click(3000,434) #game pass box
+        sleep(0.01)
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyautogui.write(game_password)
+        pyautogui.press('enter')    #enters game
+
+        if(numOfAccounts >= 7):
+            #Account 5:
+            pyautogui.click(-1874,1000)
+            pyautogui.click(-965,382) #Join Game button
+            sleep(0.2)
+            pyautogui.click(-965,431) #Game Name Box
+            sleep(0.01)
+            #Delte all previous gamename text
+            pyautogui.hotkey('ctrl', 'a')
+            pyautogui.press('backspace')
+            pyautogui.write(game_name)  #writes gamename
+            pyautogui.write(game_number_str)
+            #game password:
+            pyautogui.click(-871,434) #game pass box
+            sleep(0.01)
+            pyautogui.hotkey('ctrl', 'a')
+            pyautogui.press('backspace')
+            pyautogui.write(game_password)
+            pyautogui.press('enter')    #enters game
+
+            #Account 6:
+            pyautogui.click(-1700,15)
+            pyautogui.click(-970,85) #Join Game button
+            sleep(0.2)
+            pyautogui.click(-970,136) #Game Name Box
+            sleep(0.01)
+            #Delte all previous gamename text
+            pyautogui.hotkey('ctrl', 'a')
+            pyautogui.press('backspace')
+            pyautogui.write(game_name)  #writes gamename
+            pyautogui.write(game_number_str)
+            #game password:
+            pyautogui.click(-857,136) #game pass box
+            sleep(0.01)
+            pyautogui.hotkey('ctrl', 'a')
+            pyautogui.press('backspace')
+            pyautogui.write(game_password)
+            pyautogui.press('enter')    #enters game
+
     #game_number += 1
     #returns mouse to middle screen 960 505
+    pyautogui.click(-350,20)
+    pyautogui.click(2200,20)#click bo Buff Bot
     pyautogui.click(960,505)
     print("Done Joining")
+    sleep(0.05)
+#next game
 def on_press_f4():
     global game_number
     print("NEW GAME!:" , game_name, game_number)
@@ -81,24 +167,48 @@ def on_press_f4():
     pyautogui.press('backspace')
     pyautogui.write(game_password)
     pyautogui.press('enter')    #enters game
-    sleep(1.5)
+    sleep(0.5)
     on_press_f3()
+    sleep(0.1)
     pyautogui.press('alt')  #turns on item drop list on main
 
-
+#exit game
 def on_press_f5():
     #2500,20    3400,320
     print("EXIT init()")
-    pyautogui.click(2500,20)
+    pyautogui.click(2200,20)
     pyautogui.press('esc')
     pyautogui.click(2562,362)
     sleep(0.1)
     #exiting bot2
-    pyautogui.click(3400,320)
+    pyautogui.click(3500,925)
     sleep(0.2)
     pyautogui.press('esc')
     pyautogui.click(3200,658)
+    if(numOfAccounts >= 5):
+        #exiting bot3
+        pyautogui.click(3500,20)
+        sleep(0.2)
+        pyautogui.press('esc')
+        pyautogui.click(3200,360)
+        #exiting bot4
+        pyautogui.click(2000,1020)
+        sleep(0.2)
+        pyautogui.press('esc')
+        pyautogui.click(2560,664)
+        if(numOfAccounts >= 7):
+            #exiting bot5
+            pyautogui.click(-1874,1000)
+            sleep(0.2)
+            pyautogui.press('esc')
+            pyautogui.click(-1284,660)
+            #exiting bot6
+            pyautogui.click(-1700,15)
+            sleep(0.2)
+            pyautogui.press('esc')
+            pyautogui.click(-1284,360)
 
+    pyautogui.click(-350,20) #clicks Chrome Window
     pyautogui.click(960,505) #Back to main screen
     print("Done Exiting Games")
 
