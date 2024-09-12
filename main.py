@@ -2,10 +2,10 @@ from time import sleep, time
 import keyboard
 import pyautogui
 
-game_name = "zz-"
+game_name = "zt"   #2,972,000,000
 game_password = "1"
-game_number = 1     #zt-22
-numOfAccounts = 8       #3,5,7,8
+game_number = 1     #zt-38
+numOfAccounts = 7       #3,5,7,8
 
 def debug_mouse_position():
     while(True):
@@ -13,7 +13,7 @@ def debug_mouse_position():
         print(f"Mouse position: (X: {x}, Y: {y})")
         sleep(0.2)
 
-#join game
+#join gameg
 def on_press_f3():
     global game_number
     print("JOINING GAME:" , game_name,game_number)
