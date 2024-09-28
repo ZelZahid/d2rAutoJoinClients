@@ -1,6 +1,10 @@
 #Python script/program that AUTO-joins / creates/ leaves Diablo 2 - Resurrected games in Online Battle.net for the 
 # purpose of increasing player count. Clients on other monitors must be windowed mode and placed in specific areas.
-#Instructions:
+#Instructions: After placing clients on specific locations on screens,
+# F3 --> Join Game
+# F4 --> New Game, [leaves game from all clients, then creates/join a game with all clients]
+# F5 --> Exists all additional clients, Not the main client.
+# F6 --> Changes Game number += 1
 from time import sleep, time
 import keyboard
 import pyautogui
