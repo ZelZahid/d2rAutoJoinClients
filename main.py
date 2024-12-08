@@ -9,10 +9,10 @@ from time import sleep, time
 import keyboard
 import pyautogui
 
-game_name = "zt"   #2,972,000,000
-game_password = "1"
-game_number = 1     #zt-38
-numOfAccounts = 7       #3,5,7,8
+game_name = "zze"   #
+game_password = "123"
+game_number = 2     #zt-38
+numOfAccounts = 3       #3,5,7,8
 
 def debug_mouse_position():
     while(True):
