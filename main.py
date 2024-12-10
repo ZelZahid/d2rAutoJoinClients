@@ -11,8 +11,8 @@ import pyautogui
 
 game_name = "zze"   #
 game_password = "123"
-game_number = 2     #zt-38
-numOfAccounts = 3       #3,5,7,8
+game_number = 1     #zt-38
+numOfAccounts = 2       #2,5,7,8
 
 def debug_mouse_position():
     while(True):
@@ -43,24 +43,25 @@ def on_press_f3():
     pyautogui.write(game_password)
     pyautogui.press('enter')    #enters game
 
-    #Account 2:
-    pyautogui.click(3500,925)
-    pyautogui.click(3550,384) #Join Game button
-    sleep(0.05)
-    pyautogui.click(3450,434) #Game Name Box
-    sleep(0.01)
-    #Delte all previous gamename text
-    pyautogui.hotkey('ctrl', 'a')
-    pyautogui.press('backspace')
-    pyautogui.write(game_name)  #writes gamename
-    pyautogui.write(game_number_str)
-    #game password:
-    pyautogui.click(3600,434) #game pass box
-    sleep(0.01)
-    pyautogui.hotkey('ctrl', 'a')
-    pyautogui.press('backspace')
-    pyautogui.write(game_password)
-    pyautogui.press('enter')    #enters game
+    if(numOfAccounts >= 3):
+        #Account 2:
+        pyautogui.click(3500,925)
+        pyautogui.click(3550,384) #Join Game button
+        sleep(0.05)
+        pyautogui.click(3450,434) #Game Name Box
+        sleep(0.01)
+        #Delte all previous gamename text
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyautogui.write(game_name)  #writes gamename
+        pyautogui.write(game_number_str)
+        #game password:
+        pyautogui.click(3600,434) #game pass box
+        sleep(0.01)
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyautogui.write(game_password)
+        pyautogui.press('enter')    #enters game
 
     if(numOfAccounts >= 5):
             #Account 3:
@@ -207,11 +208,12 @@ def on_press_f5():
     pyautogui.press('esc')
     pyautogui.click(2562,362)
     sleep(0.01)
-    #exiting bot2
-    pyautogui.click(3500,925)
-    sleep(0.01)
-    pyautogui.press('esc')
-    pyautogui.click(3200,658)
+    if(numOfAccounts >= 3):
+        #exiting bot2
+        pyautogui.click(3500,925)
+        sleep(0.01)
+        pyautogui.press('esc')
+        pyautogui.click(3200,658)
     if(numOfAccounts >= 5):
         #exiting bot3
         pyautogui.click(3500,20)
