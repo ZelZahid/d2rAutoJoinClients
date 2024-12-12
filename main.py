@@ -9,10 +9,10 @@ from time import sleep, time
 import keyboard
 import pyautogui
 
-game_name = "zze"   #
+game_name = "Zz-"   #
 game_password = "123"
 game_number = 1     #zt-38
-numOfAccounts = 2       #2,5,7,8
+numOfAccounts = 8       #2,3,5,7,8
 
 def debug_mouse_position():
     while(True):
@@ -107,7 +107,7 @@ def on_press_f3():
             pyautogui.click(-1874,1000)
             pyautogui.click(-965,382) #Join Game button
             sleep(0.05)
-            pyautogui.click(-965,431) #Game Name Box
+            pyautogui.click(-965,455) #Game Name Box
             sleep(0.01)
             #Delte all previous gamename text
             pyautogui.hotkey('ctrl', 'a')
@@ -115,7 +115,7 @@ def on_press_f3():
             pyautogui.write(game_name)  #writes gamename
             pyautogui.write(game_number_str)
             #game password:
-            pyautogui.click(-871,434) #game pass box
+            pyautogui.click(-871,455) #game pass box
             sleep(0.01)
             pyautogui.hotkey('ctrl', 'a')
             pyautogui.press('backspace')
@@ -146,7 +146,7 @@ def on_press_f3():
                 pyautogui.click(-50,1050)
                 pyautogui.click(-295,385) #Join Game button
                 sleep(0.05)
-                pyautogui.click(-392,434) #Game Name Box
+                pyautogui.click(-392,455) #Game Name Box
                 sleep(0.01)
                 #Delte all previous gamename text
                 pyautogui.hotkey('ctrl', 'a')
@@ -154,7 +154,7 @@ def on_press_f3():
                 pyautogui.write(game_name)  #writes gamename
                 pyautogui.write(game_number_str)
                 #game password:
-                pyautogui.click(-200,434) #game pass box
+                pyautogui.click(-200,455) #game pass box
                 sleep(0.01)
                 pyautogui.hotkey('ctrl', 'a')
                 pyautogui.press('backspace')
