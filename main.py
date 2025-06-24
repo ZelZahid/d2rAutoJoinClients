@@ -15,7 +15,9 @@ click_delay = 0.1  # Change this to set global delay between mouse actions
 
 # === SAFE FUNCTIONS ===
 def safe_click(x, y):
-    pyautogui.click(x, y)
+    #pyautogui.click(x, y) #may have caused crashes
+    pyautogui.moveTo(x, y,duration=0.1) #smoother mouse movement
+    pyautogui.click()
     sleep(click_delay)
 
 def safe_write(text):
@@ -43,7 +45,7 @@ def debug_mouse_position():
         sleep(0.2)
 
 # === MAIN FUNCTIONS ===
-game_name = "Zaz"
+game_name = "Zz"
 game_password = "123"
 game_number = 1
 numOfAccounts = 3
