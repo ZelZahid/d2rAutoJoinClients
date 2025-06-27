@@ -11,7 +11,7 @@ import pyautogui
 import sys
 
 # === GLOBAL SETTINGS ===
-click_delay = 0.1  # Change this to set global delay between mouse actions
+click_delay = 0.11  # Change this to set global delay between mouse actions
 
 # === SAFE FUNCTIONS ===
 def safe_click(x, y):
@@ -45,10 +45,10 @@ def debug_mouse_position():
         sleep(0.2)
 
 # === MAIN FUNCTIONS ===
-game_name = "Zz"
+game_name = "Zel"
 game_password = "123"
 game_number = 1
-numOfAccounts = 3
+numOfAccounts = 2
 
 def on_press_f3():
     global game_number
@@ -152,7 +152,7 @@ def on_press_f3():
 
     # Return mouse to center screen
     safe_click(-350, 20)
-    safe_click(2200, 20)
+    #safe_click(2200, 20)
     safe_click(960, 505)
     print("Done Joining")
 
