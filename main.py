@@ -5,13 +5,14 @@
 # F4 --> New Game, [leaves game from all clients, then creates/join a game with all clients]
 # F5 --> Exists all additional clients, Not the main client.
 # F6 --> Changes Game number += 1
+# Todo: Combine both versions of AutoJoinClient, [Main + Computer#2]
 from time import sleep, time
 import keyboard
 import pyautogui
 import sys
 
 # === GLOBAL SETTINGS ===
-click_delay = 0.11  # Change this to set global delay between mouse actions
+click_delay = 0.1  # Change this to set global delay between mouse actions
 
 # === SAFE FUNCTIONS ===
 def safe_click(x, y):
@@ -153,7 +154,8 @@ def on_press_f3():
     # Return mouse to center screen
     safe_click(-350, 20)
     #safe_click(2200, 20)
-    safe_click(960, 505)
+    #safe_click(960, 505)#replace with move mouse
+    pyautogui.moveTo(960, 505,duration=0.05) #smoother mouse movement
     print("Done Joining")
 
 def on_press_f4():
@@ -179,8 +181,6 @@ def on_press_f4():
     safe_press('enter')
     sleep(click_delay)
     on_press_f3()
-    sleep(click_delay)
-    safe_press('alt')
 
 def on_press_f5():
     print("EXIT init()")
@@ -210,12 +210,14 @@ def on_press_f5():
                 safe_press('esc')
                 safe_click(-648, 659)
     safe_click(-350, 20)
-    safe_click(960, 505)
+    #safe_click(960, 505) #replace with move mouse pos
+    pyautogui.moveTo(960, 505,duration=0.05) #smoother mouse movement
     print("Done Exiting Games")
 
 def on_press_f6():
     global game_number
     game_number += 1
+    print("game number is Now:", game_number)
 
 # === HOTKEYS ===
 keyboard.add_hotkey('F3', on_press_f3)
