@@ -12,7 +12,7 @@ import pyautogui
 import sys
 
 # === GLOBAL SETTINGS ===
-click_delay = 0.1  # Change this to set global delay between mouse actions
+click_delay = 0.12  # Change this to set global delay between mouse actions
 
 # === SAFE FUNCTIONS ===
 def safe_click(x, y):
@@ -46,12 +46,12 @@ def debug_mouse_position():
         sleep(0.2)
 
 # === MAIN FUNCTIONS ===
-game_name = "Zel"
+game_name = "zel"
 game_password = "123"
 game_number = 1
 numOfAccounts = 3
 
-client1_window_loc = 5
+client1_window_loc = 5 #unused variable
 #Enter Client Locations here:
 client2_window_loc = (2200, 20)  # Account 2
 client2_joingametab_loc = (2900, 90)
@@ -105,18 +105,19 @@ def on_press_f3():
     game_number_str = str(game_number)
     print("JOINING GAME:", game_name, game_number)
 
-    # Account 2
-    safe_click(client2_window_loc[0], client2_window_loc[1])
-    safe_click(client2_joingametab_loc[0], client2_joingametab_loc[1])
-    safe_click(client2_joingamename_loc[0], client2_joingamename_loc[1])
-    safe_hotkey('ctrl', 'a')
-    safe_press('backspace')
-    safe_write(game_name + game_number_str)
-    safe_click(client2_joingamepass_loc[0], client2_joingamepass_loc[1])
-    safe_hotkey('ctrl', 'a')
-    safe_press('backspace')
-    safe_write(game_password)
-    safe_press('enter')
+    if numOfAccounts >= 2:
+        # Account 2
+        safe_click(client2_window_loc[0], client2_window_loc[1])
+        safe_click(client2_joingametab_loc[0], client2_joingametab_loc[1])
+        safe_click(client2_joingamename_loc[0], client2_joingamename_loc[1])
+        safe_hotkey('ctrl', 'a')
+        safe_press('backspace')
+        safe_write(game_name + game_number_str)
+        safe_click(client2_joingamepass_loc[0], client2_joingamepass_loc[1])
+        safe_hotkey('ctrl', 'a')
+        safe_press('backspace')
+        safe_write(game_password)
+        safe_press('enter')
 
     if numOfAccounts >= 3:
         # Account 3
@@ -132,7 +133,7 @@ def on_press_f3():
         safe_write(game_password)
         safe_press('enter')
 
-    if numOfAccounts >= 5:
+    if numOfAccounts >= 4:
         # Account 4
         safe_click(client4_window_loc[0], client4_window_loc[1])
         safe_click(client4_joingametab_loc[0], client4_joingametab_loc[1])
@@ -145,7 +146,7 @@ def on_press_f3():
         safe_press('backspace')
         safe_write(game_password)
         safe_press('enter')
-
+    if numOfAccounts >= 5:
         # Account 5
         safe_click(client5_window_loc[0], client5_window_loc[1])
         safe_click(client5_joingametab_loc[0], client5_joingametab_loc[1])
@@ -232,18 +233,20 @@ def on_press_f4():
     on_press_f3()
 
 def on_press_f5():
-    print("EXIT init()")
-    safe_click(client2_window_loc[0], client2_window_loc[1])
-    safe_press('esc')
-    safe_click(client2_saveandexit_loc[0], client2_saveandexit_loc[1])
+    if numOfAccounts >= 2:
+        print("EXIT init()")
+        safe_click(client2_window_loc[0], client2_window_loc[1])
+        safe_press('esc')
+        safe_click(client2_saveandexit_loc[0], client2_saveandexit_loc[1])
     if numOfAccounts >= 3:
         safe_click(client3_window_loc[0], client3_window_loc[1])
         safe_press('esc')
         safe_click(client3_saveandexit_loc[0], client3_saveandexit_loc[1])
-    if numOfAccounts >= 5:
+    if numOfAccounts >= 4:
         safe_click(client4_window_loc[0], client4_window_loc[1])
         safe_press('esc')
         safe_click(client4_saveandexit_loc[0], client4_saveandexit_loc[1])
+    if numOfAccounts >= 5:
         safe_click(client5_window_loc[0], client5_window_loc[1])
         safe_press('esc')
         safe_click(client5_saveandexit_loc[0], client5_saveandexit_loc[1])
